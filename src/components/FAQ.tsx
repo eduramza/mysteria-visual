@@ -26,27 +26,10 @@ const FAQ = () => {
   return (
     <section className="section-spacing">
       <div className="container-mystic">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Garantia */}
-          <div className="text-center lg:text-left">
-            <div className="card-mystic">
-              <div className="flex justify-center lg:justify-start mb-6">
-                <Shield className="icon-mystic w-20 h-20 animate-float" />
-              </div>
-              <h3 className="text-mystic-title text-2xl md:text-3xl mb-6">
-                Garantia de Satisfação Cósmica
-              </h3>
-              <p className="text-mystic-body text-lg">
-                Sua jornada é risco zero. Se por qualquer motivo o desenho não ressoar com sua intuição, 
-                você tem <strong className="text-accent-gold">7 dias</strong> para solicitar o reembolso 
-                total do seu investimento.
-              </p>
-            </div>
-          </div>
-
+        <div className="grid gap-12 max-w-6xl mx-auto">
           {/* FAQ */}
           <div>
-            <h3 className="text-mystic-title text-2xl md:text-3xl mb-8 text-center lg:text-left">
+            <h3 className="text-mystic-title text-2xl md:text-3xl mb-8 text-center">
               Dúvidas Comuns
             </h3>
             <div className="space-y-4">
@@ -70,6 +53,23 @@ const FAQ = () => {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Garantia */}
+          <div className="text-center">
+            <div className="card-mystic">
+              <div className="flex justify-center mb-6">
+                <Shield className="icon-mystic w-20 h-20 animate-float" />
+              </div>
+              <h3 className="text-mystic-title text-2xl md:text-3xl mb-6">
+                Garantia de Satisfação Cósmica
+              </h3>
+              <p className="text-mystic-body text-lg">
+                Sua jornada é risco zero. Se por qualquer motivo o desenho não ressoar com sua intuição, 
+                você tem <strong className="text-accent-gold">7 dias</strong> para solicitar o reembolso 
+                total do seu investimento.
+              </p>
             </div>
           </div>
         </div>

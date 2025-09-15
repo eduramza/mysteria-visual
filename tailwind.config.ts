@@ -14,6 +14,14 @@ export default {
     },
     extend: {
       colors: {
+        // Mystic Design System Colors
+        "dark-background": "hsl(var(--dark-background))",
+        "text-primary": "hsl(var(--text-primary))",
+        "accent-gold": "hsl(var(--accent-gold))",
+        "accent-silver": "hsl(var(--accent-silver))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        
+        // Original shadcn colors for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,6 +65,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        cormorant: ['Cormorant Garamond', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

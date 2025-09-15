@@ -2,104 +2,267 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Mystic Soulmate Design System - All colors, gradients, fonts, animations */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Core Mystic Colors (HSL) */
+    --dark-background: 226 56% 11%;
+    --text-primary: 60 56% 91%;
+    --accent-gold: 51 62% 53%;
+    --accent-silver: 0 0% 75%;
+    --text-secondary: 60 56% 91%;
+    
+    /* Original shadcn colors for compatibility */
+    --background: 226 56% 11%;
+    --foreground: 60 56% 91%;
+    --card: 226 56% 13%;
+    --card-foreground: 60 56% 91%;
+    --popover: 226 56% 13%;
+    --popover-foreground: 60 56% 91%;
+    --primary: 51 62% 53%;
+    --primary-foreground: 226 56% 11%;
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 226 56% 11%;
+    --muted: 226 40% 20%;
+    --muted-foreground: 60 56% 71%;
+    --accent: 51 62% 53%;
+    --accent-foreground: 226 56% 11%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 60 56% 91%;
+    --border: 226 40% 25%;
+    --input: 226 40% 25%;
+    --ring: 51 62% 53%;
+    --radius: 0.75rem;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Mystic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(226 56% 11%), hsl(240 40% 8%));
+    --gradient-gold: linear-gradient(135deg, hsl(51 62% 53%), hsl(45 80% 65%));
+    --gradient-silver: linear-gradient(135deg, hsl(0 0% 75%), hsl(0 0% 85%));
+    --gradient-mystical: radial-gradient(circle at center, hsl(240 40% 15%) 0%, hsl(226 56% 11%) 100%);
+    
+    /* Mystic Shadows */
+    --shadow-cosmic: 0 0 30px hsla(51 62% 53% / 0.3);
+    --shadow-deep: 0 10px 40px hsla(226 56% 5% / 0.8);
+    --shadow-gold: 0 0 20px hsla(51 62% 53% / 0.5);
+    --shadow-silver: 0 0 15px hsla(0 0% 75% / 0.3);
+    
+    /* Animation Durations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-dark-background text-text-primary font-montserrat;
+    background-image: url('./assets/cosmic-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      hsla(226, 56%, 11%, 0.85) 0%, 
+      hsla(240, 40%, 8%, 0.9) 50%,
+      hsla(226, 56%, 11%, 0.85) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  /* Typography Classes */
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Mystic Text Styles */
+  .text-mystic-title {
+    @apply font-cormorant font-semibold text-accent-gold;
+    letter-spacing: 0.02em;
+  }
+
+  .text-mystic-body {
+    @apply font-montserrat text-text-primary;
+    line-height: 1.7;
+  }
+
+  .text-mystic-secondary {
+    @apply font-montserrat;
+    color: hsla(var(--text-secondary) / 0.7);
+  }
+
+  /* Mystic Button Variants */
+  .btn-cosmic {
+    @apply px-8 py-4 rounded-xl font-montserrat font-medium;
+    background: var(--gradient-gold);
+    color: hsl(var(--dark-background));
+    box-shadow: var(--shadow-gold);
+    transition: var(--transition-smooth);
+    animation: cosmic-pulse 2s ease-in-out infinite;
+  }
+
+  .btn-cosmic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px hsla(var(--accent-gold) / 0.6);
+  }
+
+  .btn-cosmic-large {
+    @apply btn-cosmic px-12 py-5 text-lg;
+  }
+
+  /* Mystic Card Styles */
+  .card-mystic {
+    @apply rounded-2xl p-6;
+    background: hsla(var(--card) / 0.8);
+    border: 1px solid hsla(var(--accent-silver) / 0.2);
+    box-shadow: var(--shadow-deep);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+  }
+
+  .card-mystic:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-cosmic);
+    border-color: hsla(var(--accent-gold) / 0.3);
+  }
+
+  /* Section Spacing */
+  .section-spacing {
+    @apply py-16 px-4;
+  }
+
+  /* Container */
+  .container-mystic {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Mystic Icons */
+  .icon-mystic {
+    @apply w-12 h-12;
+    color: hsl(var(--accent-gold));
+    filter: drop-shadow(0 0 8px hsla(var(--accent-gold) / 0.5));
+  }
+
+  /* FAQ Accordions */
+  .faq-item {
+    @apply border border-accent-silver/20 rounded-xl mb-4 overflow-hidden;
+    background: hsla(var(--card) / 0.6);
+  }
+
+  .faq-summary {
+    @apply p-6 cursor-pointer font-montserrat font-medium text-accent-gold;
+    transition: var(--transition-smooth);
+  }
+
+  .faq-summary:hover {
+    background: hsla(var(--accent-gold) / 0.1);
+  }
+
+  .faq-content {
+    @apply p-6 pt-0 text-text-primary;
+  }
+
+  /* Testimonial Gallery */
+  .testimonial-card {
+    @apply card-mystic flex flex-col md:flex-row gap-6 items-center;
+  }
+
+  .testimonial-image {
+    @apply rounded-xl;
+    border: 2px solid hsl(var(--accent-silver));
+    box-shadow: var(--shadow-silver);
+  }
+
+  /* Price Display */
+  .price-display {
+    @apply text-6xl font-bold text-accent-gold font-cormorant;
+    text-shadow: 0 0 20px hsla(var(--accent-gold) / 0.5);
+  }
+
+  /* Video Container */
+  .video-container {
+    @apply relative rounded-2xl overflow-hidden;
+    border: 2px solid hsl(var(--accent-gold));
+    box-shadow: var(--shadow-gold);
+    aspect-ratio: 16/9;
+  }
+}
+
+@layer utilities {
+  /* Color Utilities */
+  .text-dark-background { color: hsl(var(--dark-background)); }
+  .text-text-primary { color: hsl(var(--text-primary)); }
+  .text-accent-gold { color: hsl(var(--accent-gold)); }
+  .text-accent-silver { color: hsl(var(--accent-silver)); }
+  .text-text-secondary { color: hsla(var(--text-secondary) / 0.7); }
+  
+  .bg-dark-background { background-color: hsl(var(--dark-background)); }
+  .bg-accent-gold { background-color: hsl(var(--accent-gold)); }
+  .bg-accent-silver { background-color: hsl(var(--accent-silver)); }
+}
+
+/* Keyframe Animations */
+@keyframes cosmic-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsla(var(--accent-gold) / 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 30px hsla(var(--accent-gold) / 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-spacing {
+    @apply py-12 px-4;
+  }
+  
+  .price-display {
+    @apply text-4xl;
+  }
+  
+  .btn-cosmic-large {
+    @apply px-8 py-4 text-base;
   }
 }

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 
 const Hero = () => {
-  // Passo 1: Declarar o estado para controlar a visibilidade do vídeo
   const [showVideo, setShowVideo] = useState(false);
 
   return (
@@ -25,16 +24,13 @@ const Hero = () => {
               className="w-full h-full"
               src="https://www.youtube.com/embed/hBnd4fVvA6A?rel=0&autoplay=1&controls=0&loop=1" 
               title="VSL Incrível" 
-              // Atributos corrigidos para camelCase
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen>
             </iframe>
           ) : (
-            // Se for false, renderiza seu placeholder clicável
             <div 
               className="relative w-full h-full bg-gradient-to-br from-dark-background/80 to-card/40 flex items-center justify-center cursor-pointer"
-              // Passo 3: O onClick muda o estado para true
               onClick={() => setShowVideo(true)}
             >
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">

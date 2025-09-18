@@ -57,7 +57,9 @@ const Hero = () => {
           para visualizar a pessoa que o universo selecionou para <strong>estar com você</strong>?
         </p>
 
-        <button className="btn-cosmic-large animate-fade-in hover:scale-105 transition-transform">
+        <button 
+          onClick={() => window.open("https://go.perfectpay.com.br/PPU38CPGP11", "_blank")}
+          className="btn-cosmic-large animate-fade-in hover:scale-105 transition-transform">
           SIM, QUERO VER O DESENHO DA MINHA ALMA GÊMEA
         </button>
       </div>

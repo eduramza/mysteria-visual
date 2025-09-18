@@ -31,7 +31,7 @@ const Offer = () => {
               </p>
             </div>
             
-            <button className="btn-cosmic-large w-full md:w-auto">
+            <button onClick={() => window.open("https://go.perfectpay.com.br/PPU38CPGP11", "_blank")} className="btn-cosmic-large w-full md:w-auto">
               <div className="flex flex-col items-center">
                 <span className="text-lg font-semibold">
                   QUERO MEU DESENHO AGORA

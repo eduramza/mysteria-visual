@@ -1,6 +1,6 @@
-import depoimento1 from "@/assets/depoimento-1.jpg";
-import depoimento2 from "@/assets/depoimento-2.jpg";
-import depoimento3 from "@/assets/depoimento-3.jpg";
+import depoimento1 from "@/assets/depoimento-1.svg";
+import depoimento2 from "@/assets/depoimento-2.svg";
+import depoimento3 from "@/assets/depoimento-3.svg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -11,13 +11,13 @@ const Testimonials = () => {
     },
     {
       image: depoimento2,
-      quote: "Eu estava cética, mas o desenho mostrou detalhes tão específicos... Os olhos, o sorriso. Quando finalmente o encontrei, era impossível negar a semelhança.",
-      author: "Juliana R., Rio de Janeiro - RJ"
+      quote: "Eu estava cética, mas o desenho mostrou detalhes tão específicos... Foi realmente surreal. Nos conhecemos 2 meses depois de eu ter recebido o desenho, foi tudo muito natural, estamos muito felizes juntos agora.",
+      author: "Sandra R., Duque de Caixias - RS"
     },
     {
       image: depoimento3,
       quote: "O mais incrível foi que, além da aparência física, o desenho capturou a essência da pessoa. Quando nos conhecemos, senti que já o conhecia há anos.",
-      author: "Camila S., Belo Horizonte - MG"
+      author: "Camila S., Juazeiro do Norte - CE"
     }
   ];
 

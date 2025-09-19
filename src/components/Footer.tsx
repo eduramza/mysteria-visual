@@ -28,13 +28,13 @@ const Footer = () => {
         {/* Links */}
         <nav className="flex justify-center gap-8 text-sm">
           <a 
-            href="#" 
+            href="https://produtosmof.site/termos-de-uso" 
             className="text-accent-silver hover:text-accent-gold transition-colors font-montserrat"
           >
             Termos de Uso
           </a>
           <a 
-            href="#" 
+            href="https://produtosmof.site/politicas-de-privacidade" 
             className="text-accent-silver hover:text-accent-gold transition-colors font-montserrat"
           >
             Política de Privacidade
@@ -46,6 +46,10 @@ const Footer = () => {
             Contato
           </a>
         </nav>
+        {/* Copyright */}
+        <p className="text-accent-silver font-montserrat">
+          Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.
+        </p>
       </div>
     </footer>
   );

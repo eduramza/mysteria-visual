@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { Shield } from "lucide-react";
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -57,11 +58,18 @@ const Hero = () => {
           para visualizar a pessoa que o universo selecionou para <strong>estar com você</strong>?
         </p>
 
-        <button 
-          onClick={() => window.open("https://go.perfectpay.com.br/PPU38CPGP11", "_blank")}
-          className="btn-cosmic-large animate-fade-in hover:scale-105 transition-transform">
-          SIM, QUERO VER O DESENHO DA MINHA ALMA GÊMEA
-        </button>
+        <div className="flex flex-col items-center gap-3">
+          <button 
+            onClick={() => window.open("https://go.perfectpay.com.br/PPU38CPGP11", "_blank")}
+            className="btn-cosmic-large animate-fade-in hover:scale-105 transition-transform">
+            SIM, QUERO VER O DESENHO DA MINHA ALMA GÊMEA
+          </button>
+          
+          <div className="flex items-center gap-2 text-accent-silver">
+            <Shield className="w-6 h-6" />
+            <span className="font-montserrat text-sm">Pagamento 100% seguro. Suas informações estão protegidas.</span>
+          </div>
+        </div>
       </div>
     </section>
   );
